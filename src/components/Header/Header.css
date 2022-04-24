@@ -1,0 +1,32 @@
+header {
+  height: 8vh;
+  background-color: rgb(55, 53, 53);
+  font-weight: 400;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5vw;
+}
+.btn-change-user {
+  background-color: rgb(55, 53, 53);
+  border: solid 1.2px #fff;
+  height: 22px;
+  width: 104px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 9px;
+  white-space: nowrap;
+  margin-right: 1.5vw;
+}
+
+.btn-change-user:hover {
+  background-color: #fff;
+  color: rgb(98, 97, 97);
+  cursor: pointer;
+}
