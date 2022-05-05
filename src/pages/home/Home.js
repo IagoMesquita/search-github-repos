@@ -36,7 +36,12 @@ function Home() {
   }
 
   return (
-    loadingHome ? (<h1 className="loading">Loading...</h1>)
+    loadingHome ? (
+      <>
+      <Header/>
+      <h1 className="loading">Loading...</h1>
+      </>
+      )
    :
    <div className='container'>
      <Header/>
