@@ -16,7 +16,7 @@ function Starreds() {
           <span className='descript-repo'>{ starred.description }</span>
           <div className="icon-container">
             <div className="icons">
-              <i class="bi bi-star-fill"></i>
+              <i className="bi bi-star-fill"></i>
               <span>{ starred.stargazers_count }</span>
             </div>
             <div className="icons">
