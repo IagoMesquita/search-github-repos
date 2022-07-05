@@ -19,3 +19,17 @@
   font-weight: bold;
   color: rgb(115, 113, 113);
 }
+
+@media screen and (min-width: 768px) {
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+  }
+
+  .profile-container img {
+    height: 160px;
+    width: 160px;
+  }
+}
