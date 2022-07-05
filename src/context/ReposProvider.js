@@ -14,20 +14,9 @@ function ReposProvider({ children }) {
   const [repoAllOrStar, setRepoAllOrStar] = useState(true);
 
   useEffect(() => {
-    console.log('Chamou AAAA!!!!')
     setStarreds(filterStarreds(repos));
     
   }, [repos])
-
-  useEffect(() => {
-    console.log('Chamou BBB!!!!')
-
-    setProfile(JSON.parse(localStorage.getItem('profile')) || []);
-    setRepos(JSON.parse(localStorage.getItem('repos')) || []);
-  }, [])
-
-  console.log('REPOS:', repos);
-  console.log('SO  FAV:', starreds)
 
   const contextValue = {
     repos,

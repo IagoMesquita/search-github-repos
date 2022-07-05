@@ -3,3 +3,23 @@
   justify-content: center;
   align-items: center;
 }
+
+.repos-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .main-content-repos {
+    width: 70%;
+    overflow: hidden;
+  }
+  .container-full-screen {
+    display: flex;
+    padding: 0 10px 0 10px;
+    margin: 20px auto 0 auto;
+  }
+  .repos-container {
+    width: 100%;
+  }
+}

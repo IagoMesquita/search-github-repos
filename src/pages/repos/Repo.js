@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import MyContext from '../../context/MyContext';
 import Header from '../../components/Header/Header';
 import Profile from '../../components/Profile/Profile';
@@ -10,10 +10,17 @@ import './Repo.css';
 function Repos () {
 
   const { 
-     nameRepo, setNameRepo, 
+    setProfile, setRepos,
+    nameRepo, setNameRepo, 
     repoAllOrStar,
     loading,
   } = useContext(MyContext)
+
+  useEffect(() => {
+
+    setProfile(JSON.parse(localStorage.getItem('profile')) || []);
+    setRepos(JSON.parse(localStorage.getItem('repos')) || []);
+  }, [])
 
   
   return (
@@ -27,26 +34,30 @@ function Repos () {
     :
     <div>
       <Header/>
-      <Profile/>
-      <ButtonsRepoAndStarred/>
-      <main className="repos-container">
-        <div className="input-container">
-          <i class="bi bi-search"></i>
-          <input
-            value={ nameRepo }
-            onChange={({ target }) => setNameRepo(target.value)}
-            className="search-users"
-            placeholder="Filter by name"
-            type="text"
-          />
-        </div>
-        { repoAllOrStar ? (
-          <AllRepos/>
-        )
-        : ( <Starreds/>) 
-        }
-        
-      </main>
+      <div className='container-full-screen'>
+        <Profile/>
+        <main className='main-content-repos'>
+          <ButtonsRepoAndStarred/>
+          <section className="repos-container">
+            <div className="input-container">
+              <i className="bi bi-search"></i>
+              <input
+                value={ nameRepo }
+                onChange={({ target }) => setNameRepo(target.value)}
+                className="search-users"
+                placeholder="Filter by name"
+                type="text"
+              />
+            </div>
+            { repoAllOrStar ? (
+              <AllRepos/>
+            )
+            : ( <Starreds/>) 
+            }
+            
+          </section>
+        </main>
+      </div>
     </div>
   );
 }

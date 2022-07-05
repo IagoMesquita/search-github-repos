@@ -23,10 +23,22 @@ header {
   font-size: 9px;
   white-space: nowrap;
   margin-right: 1.5vw;
+  transition: .5s;
 }
 
 .btn-change-user:hover {
   background-color: #fff;
   color: rgb(98, 97, 97);
+  font-weight: 700;
   cursor: pointer;
+}
+
+@media screen and (min-width: 425px) {
+  .btn-change-user  {
+    height: calc(22px + 10%);
+    width: calc(104px + 8%);
+    font-size: calc(9px + 15%);
+    font-weight: 700;
+    border-radius: 8px;
+  }
 }

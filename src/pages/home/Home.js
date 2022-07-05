@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import MyContext from '../../context/MyContext';
 import getPerfil from '../../util/getPerfil';
 import getRepos from '../../util/getRepos';
+import formatUsernameForSearch from '../../util/formatUsernameForSearch'
 import Header from '../../components/Header/Header';
 function Home() {
 
@@ -22,12 +23,12 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoadingHome(true);
-    
-    const infoPerfil = await getPerfil(user);
+    const formattedUser = formatUsernameForSearch(user)
+    const infoPerfil = await getPerfil(formattedUser);
     setProfile({ ...infoPerfil });
     localStorage.setItem('profile', JSON.stringify(infoPerfil));
 
-    const allRepos = await getRepos(user);
+    const allRepos = await getRepos(formattedUser);
     setRepos(allRepos);
     localStorage.setItem('repos', JSON.stringify(allRepos));
 
@@ -37,18 +38,18 @@ function Home() {
 
   return (
     loadingHome ? (
-      <>
+    <>
       <Header/>
       <h1 className="loading">Loading...</h1>
-      </>
-      )
+    </>  
+    )
    :
    <div className='container'>
      <Header/>
     <main className='main-content'>
       <form onSubmit={ (e) => { handleSubmit(e) } }>
         <div className='input-container'>
-          <i class="bi bi-search"></i>
+          <i className="bi bi-search"></i>
           <input 
           className='search-users' 
           value={ user }
