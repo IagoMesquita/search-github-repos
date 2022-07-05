@@ -11,18 +11,28 @@ body {
 .input-container {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  border: 1px solid rgb(222, 217, 217);
+  margin: 20px auto 0 auto;
+  border: 2px solid rgb(222, 217, 217);
   width: 250px;
   height: 27px;
+  padding: 2px;
+  transition: .3s;
+}
+
+.input-container:hover {
+  border: 2px solid gold;
 }
 
 .search-users {
   border: none;
   text-align: center;
+  /* border: solid blue 1px; */
   
+}
+
+.bi-search {
+  /* border: solid red 1px; */
+  padding-left: 3px;
 }
 
 /* REFERENCIA: https://pt.stackoverflow.com/questions/5216/como-remover-borda-dos-input-e-textarea-de-todos-os-browsers-quando-clicado */
