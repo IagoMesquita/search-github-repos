@@ -34,26 +34,30 @@ function Repos () {
     :
     <div>
       <Header/>
-      <Profile/>
-      <ButtonsRepoAndStarred/>
-      <main className="repos-container">
-        <div className="input-container">
-          <i className="bi bi-search"></i>
-          <input
-            value={ nameRepo }
-            onChange={({ target }) => setNameRepo(target.value)}
-            className="search-users"
-            placeholder="Filter by name"
-            type="text"
-          />
-        </div>
-        { repoAllOrStar ? (
-          <AllRepos/>
-        )
-        : ( <Starreds/>) 
-        }
-        
-      </main>
+      <div className='container-full-screen'>
+        <Profile/>
+        <main className='main-content-repos'>
+          <ButtonsRepoAndStarred/>
+          <section className="repos-container">
+            <div className="input-container">
+              <i className="bi bi-search"></i>
+              <input
+                value={ nameRepo }
+                onChange={({ target }) => setNameRepo(target.value)}
+                className="search-users"
+                placeholder="Filter by name"
+                type="text"
+              />
+            </div>
+            { repoAllOrStar ? (
+              <AllRepos/>
+            )
+            : ( <Starreds/>) 
+            }
+            
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
