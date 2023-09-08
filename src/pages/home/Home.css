@@ -49,10 +49,9 @@ textarea:focus, input:focus, select:focus {
 }
 
 .message-error {
-  margin-top: 35%;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(220,220,220);
-
 }
